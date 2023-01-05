@@ -10,21 +10,28 @@ Table of releases
 
 <!-- TOC depthFrom:2 depthTo:2 orderedList:false -->
 
-- [[Unreleased]](#unreleased)
-- [[1.32.1] - 2017-09-16](#1321---2017-09-16)
-- [[1.32.0] - 2017-09-11](#1320---2017-09-11)
-- [[1.31.0] - 2017-09-06](#1310---2017-09-06)
-- [[1.30.1] - 2017-08-29](#1301---2017-08-29)
-- [[1.29.1] - 2017-08-22](#1291---2017-08-22)
-- [[1.28.0] - 2017-08-19](#1280---2017-08-19)
-- [[1.27.0] - 2017-08-14](#1270---2017-08-14)
-- [[1.26.0] - 2017-08-11](#1260---2017-08-11)
-- [[1.25.0] - 2017-08-04](#1250---2017-08-04)
-- [[1.24.1] - 2017-08-02](#1241---2017-08-02)
+- [Changelog](#changelog)
+  - [Table of releases](#table-of-releases)
+  - [\[Unreleased\]](#unreleased)
+  - [\[2.00.0\] - 2022-01-05](#2000---2022-01-05)
+  - [\[1.32.1\] - 2017-09-16](#1321---2017-09-16)
+  - [\[1.32.0\] - 2017-09-11](#1320---2017-09-11)
+  - [\[1.31.0\] - 2017-09-06](#1310---2017-09-06)
+  - [\[1.30.1\] - 2017-08-29](#1301---2017-08-29)
+  - [\[1.29.1\] - 2017-08-22](#1291---2017-08-22)
+  - [\[1.28.0\] - 2017-08-19](#1280---2017-08-19)
+  - [\[1.27.0\] - 2017-08-14](#1270---2017-08-14)
+  - [\[1.26.0\] - 2017-08-11](#1260---2017-08-11)
+  - [\[1.25.0\] - 2017-08-04](#1250---2017-08-04)
+  - [\[1.24.1\] - 2017-08-02](#1241---2017-08-02)
 
 <!-- /TOC -->
 
 ## [Unreleased]
+
+## [2.00.0] - 2022-01-05
+
+This fork drops support for Python 2, and focuses solely on Python 3. This also cleaning up the requirements, as we no longer have these dependencies (goodbye Python 2, your sunsetting took far too long). Future versions may include fixes for issues, but my own usage is so limited that it's unlikely, find more active forks if you require this.
 
 * added opencage rate to show how many API queries remain for the day (issue #295)
 * added `country_code` result when geocoding with osm

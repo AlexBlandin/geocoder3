@@ -1,15 +1,13 @@
 #!/usr/bin/python
 # coding: utf8
-from __future__ import absolute_import
 
 import logging
 
 from geocoder.location import Location
 from geocoder.geocodefarm import GeocodeFarmQuery
 
-
 class GeocodeFarmReverse(GeocodeFarmQuery):
-    """
+  """
     Geocode.Farm
     =======================
     Geocode.Farm is one of the few providers that provide this highly
@@ -33,23 +31,22 @@ class GeocodeFarmReverse(GeocodeFarmQuery):
     -------------
     https://geocode.farm/geocoding/free-api-documentation/
     """
-    provider = 'geocodefarm'
-    method = 'reverse'
-
-    _URL = 'https://www.geocode.farm/v3/json/reverse/'
-
-    def _build_params(self, location, provider_key, **kwargs):
-        location = Location(location)
-        return {
-            'lat': location.latitude,
-            'lon': location.longitude,
-            'key': provider_key,
-            'lang': kwargs.get('lang', ''),
-            'country': kwargs.get('country', ''),
-        }
-
+  provider = 'geocodefarm'
+  method = 'reverse'
+  
+  _URL = 'https://www.geocode.farm/v3/json/reverse/'
+  
+  def _build_params(self, location, provider_key, **kwargs):
+    location = Location(location)
+    return {
+      'lat': location.latitude,
+      'lon': location.longitude,
+      'key': provider_key,
+      'lang': kwargs.get('lang', ''),
+      'country': kwargs.get('country', ''),
+    }
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
-    g = GeocodeFarmReverse([45.3, -75.4])
-    g.debug()
+  logging.basicConfig(level = logging.INFO)
+  g = GeocodeFarmReverse([45.3, -75.4])
+  g.debug()

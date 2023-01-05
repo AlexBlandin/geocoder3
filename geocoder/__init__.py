@@ -1,8 +1,5 @@
 #!/usr/bin/python
 # coding: utf8
-
-from __future__ import absolute_import
-
 """
 Geocoder
 ~~~~~~~~
@@ -26,21 +23,21 @@ Consistant JSON responses from various providers.
 """
 
 __title__ = 'geocoder'
-__author__ = 'Denis Carriere'
+__author__ = 'Denis Carriere, Alex Blandin'
 __author_email__ = 'carriere.denis@gmail.com'
-__version__ = '1.38.1'
+__version__ = '2.00.0'
 __license__ = 'MIT'
-__copyright__ = 'Copyright (c) 2013-2016 Denis Carriere'
+__copyright__ = 'Copyright (c) 2013-2016 Denis Carriere, 2023- Alex Blandin'
 
 # CORE
-from geocoder.api import get, yahoo, bing, geonames, mapquest, google, mapbox  # noqa
-from geocoder.api import nokia, osm, tomtom, geolytica, arcgis, opencage, locationiq  # noqa
-from geocoder.api import maxmind, ipinfo, freegeoip, ottawa, here, baidu, gaode, w3w  # noqa
-from geocoder.api import yandex, mapzen, komoot, tamu, geocodefarm, tgos, uscensus  # noqa
-from geocoder.api import gisgraphy  # noqa
+from geocoder.api import get, yahoo, bing, geonames, mapquest, google, mapbox # noqa
+from geocoder.api import nokia, osm, tomtom, geolytica, arcgis, opencage, locationiq # noqa
+from geocoder.api import maxmind, ipinfo, freegeoip, ottawa, here, baidu, gaode, w3w # noqa
+from geocoder.api import yandex, mapzen, komoot, tamu, geocodefarm, tgos, uscensus # noqa
+from geocoder.api import gisgraphy # noqa
 
 # EXTRAS
-from geocoder.api import timezone, elevation, places, ip, canadapost, reverse, distance, location  # noqa
+from geocoder.api import timezone, elevation, places, ip, canadapost, reverse, distance, location # noqa
 
 # CLI
-from geocoder.cli import cli  # noqa
+from geocoder.cli import cli # noqa

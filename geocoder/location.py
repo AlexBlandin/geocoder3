@@ -3,7 +3,6 @@
 
 import re
 import geocoder
-from six import string_types
 try:
     from statistics import mean
 except ImportError:

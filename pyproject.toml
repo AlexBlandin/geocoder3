@@ -11,7 +11,7 @@ requests = "^2.28.1"
 ratelim = "0.1.6"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.1.2"
+ruff = "^0.1.5"
 yapf = "^0.32.0"
 pylint = "^3.0.0"
 certifi = "^2022.12.7"
@@ -34,18 +34,13 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
-select = ["E", "F"]
-# ignore = ["E501"] # E501 (line length  violations)
-unfixable = ["B", "SIM", "TRY", "RUF"]
-line-length = 160
 target-version = "py310"
+line-length = 160
 
-[tool.ruff.lint] # they're being moved into here?
+[tool.ruff.lint]
 select = ["E", "F"]
-# ignore = ["E501"] # E501 (line length  violations)
-unfixable = ["B", "SIM", "TRY", "RUF"]
-line-length = 160
-target-version = "py310"
+unfixable = ["B", "SIM", "TRY"]
+extend-select = ["UP"]
 
 [tool.ruff.isort]
 ensure_newline_before_comments = true

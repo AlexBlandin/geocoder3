@@ -1,8 +1,7 @@
-# coding: utf8
-
 import geocoder
 
-location = 'Ottawa'
+location = "Ottawa"
+
 
 def test_ottawa():
   g = geocoder.ottawa(location)
@@ -11,6 +10,7 @@ def test_ottawa():
   assert osm_count >= 3
   assert fields_count >= 10
 
+
 def test_multi_results():
-  g = geocoder.ottawa(location, maxRows = 3)
+  g = geocoder.ottawa(location, maxRows=3)
   assert len(g) == 3

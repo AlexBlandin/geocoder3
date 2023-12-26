@@ -6,13 +6,14 @@ python:
   - "3.9"
   - "3.10"
   - "3.11"
+  - "3.12"
 
 before_install:
   - pip install -r requirements-dev.txt
   - pip install -r requirements.txt
 
 install:
-  - python setup.py develop
+  - python -m pip install
 
 script:
   - pytest --cov=geocoder tests

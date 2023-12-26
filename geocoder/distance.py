@@ -10,7 +10,7 @@ def Distance(*args, **kwargs):
   total = 0.0
   last = None
 
-  if len(args) == 1 and isinstance(args, (list, tuple)):
+  if len(args) == 1 and isinstance(args, list | tuple):
     args = args[0]
 
   if len(args) <= 1:

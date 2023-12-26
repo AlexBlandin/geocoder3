@@ -14,7 +14,7 @@ ottawa = (45.4215296, -75.6971930)
 def geonames_response(request):
   url = "http://api.geonames.org/searchJSON?q=Ottawa%2C+Ontario&fuzzy=1.0&username=mock&maxRows=1"
   data_file = "tests/results/geonames.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     mocker.get(url, text=input.read())
     result = geocoder.geonames(location, key="mock")
   return result
@@ -24,7 +24,7 @@ def geonames_response(request):
 def paid_geonames_response(request):
   url = "http://ws.geonames.org/searchJSON?q=Ottawa%2C+Ontario&fuzzy=1.0&username=mock&maxRows=1"
   data_file = "tests/results/geonames.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     mocker.get(url, text=input.read())
     result = geocoder.geonames(location, url="http://ws.geonames.org/searchJSON", key="mock")
   return result
@@ -70,7 +70,7 @@ def test_geonames_first_result(geonames_response):
 
 def test_geonames_geojson(geonames_response):
   geojson_file = "tests/results/geonames.geo.json"
-  with open(geojson_file) as geojson_stream:
+  with open(geojson_file, encoding="locale") as geojson_stream:
     expected_geo_json = json.load(geojson_stream)
     assert geonames_response.geojson == expected_geo_json
 
@@ -95,7 +95,7 @@ def test_geonames_delegation(geonames_response):
 def test_extra():
   url = "http://api.geonames.org/searchJSON?q=Ottawa%2C+Ontario&fuzzy=1.0&username=mock&maxRows=1&featureClass=A"
   data_file = "tests/results/geonames_extra.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     mocker.get(url, text=input.read())
     g = geocoder.geonames(location, key="mock", featureClass="A")
     assert g.ok
@@ -114,7 +114,7 @@ def test_extra():
 def test_details():
   url = "http://api.geonames.org/getJSON?geonameId=6094817&username=mock&style=full"
   data_file = "tests/results/geonames_details.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     mocker.get(url, text=input.read())
     g = geocoder.geonames(6094817, method="details", key="mock")
 
@@ -150,7 +150,7 @@ def test_details():
 def test_children():
   url = "http://api.geonames.org/childrenJSON?geonameId=6094817&username=mock"
   data_file = "tests/results/geonames_children.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     mocker.get(url, text=input.read())
     g = geocoder.geonames(6094817, method="children", key="mock")
     assert g.ok
@@ -167,7 +167,7 @@ def test_children():
 def test_children_delegation():
   url = "http://api.geonames.org/childrenJSON?geonameId=6094817&username=mock"
   data_file = "tests/results/geonames_children.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     mocker.get(url, text=input.read())
     g = geocoder.geonames(6094817, method="children", key="mock")
     assert g.ok
@@ -185,7 +185,7 @@ def test_children_delegation():
 def test_hierarchy():
   url = "http://api.geonames.org/hierarchyJSON?geonameId=6094817&username=mock"
   data_file = "tests/results/geonames_hierarchy.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     mocker.get(url, text=input.read())
     g = geocoder.geonames(6094817, method="hierarchy", key="mock")
     assert g.ok
@@ -206,14 +206,14 @@ def test_geocoding_with_proximity():
     "https://maps.googleapis.com/maps/api/geocode/json?client=[secure]&latlng=45.4215296%2C+-75.697193&sensor=false&signature=iXbq6odmrYN0XgcfB5EPcgEvR-I%3D",
   ]
   data_file = "tests/results/google.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     for url in urls:
       mocker.get(url, text=input.read())
     google = geocoder.google(location, client=None, key="mock")
   # query geonames with bbox
   url = "http://api.geonames.org/searchJSON?q=Ottawa%2C+Ontario&fuzzy=1.0&username=mock&maxRows=1&east=-75.2465979&west=-76.3539158&north=45.5375801&south=44.962733"
   data_file = "tests/results/geonames_proximity.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     mocker.get(url, text=input.read())
     g = geocoder.geonames(location, key="mock", proximity=google.bbox)
     assert g.ok

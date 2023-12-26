@@ -266,9 +266,8 @@ class OneResult:
         osm["addr:country"] = self.country
       if self.postal:
         osm["addr:postal"] = self.postal
-      if hasattr(self, "population"):
-        if self.population:
-          osm["population"] = self.population
+      if hasattr(self, "population") and self.population:
+        osm["population"] = self.population
     return osm
 
   @property
@@ -378,7 +377,7 @@ class MultipleResultsQuery(MutableSequence):
     return key
 
   def __init__(self, location, **kwargs):
-    super(MultipleResultsQuery, self).__init__()
+    super().__init__()
     self._list = []
 
     # check validity of _URL

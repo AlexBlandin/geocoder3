@@ -8,7 +8,7 @@ from geocoder.base import OneResult, MultipleResultsQuery
 class YandexResult(OneResult):
   def __init__(self, json_content):
     self._meta_data = json_content["metaDataProperty"]["GeocoderMetaData"]
-    super(YandexResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):

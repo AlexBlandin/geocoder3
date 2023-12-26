@@ -12,7 +12,7 @@ class OsmResult(OneResult):
     self._address = json_content.get("address", {})
 
     # proceed with super.__init__
-    super(OsmResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   # ============================ #
   # Geometry - Points & Polygons #

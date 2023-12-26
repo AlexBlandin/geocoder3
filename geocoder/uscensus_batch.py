@@ -8,8 +8,15 @@ import csv
 import requests
 
 csv_io = io.StringIO
-csv_encode = lambda input: input.encode("utf-8")
-csv_decode = lambda input: input.decode("utf-8")
+
+
+def csv_encode(input):
+  return input.encode("utf-8")
+
+
+def csv_decode(input):
+  return input.decode("utf-8")
+
 
 LOGGER = logging.getLogger(__name__)
 
@@ -22,7 +29,7 @@ class USCensusBatchResult(OneResult):
       self._coordinates = tuple(float(pos) for pos in content[1].split(","))
 
     # proceed with super.__init__
-    super(USCensusBatchResult, self).__init__(content)
+    super().__init__(content)
 
   @property
   def lat(self):

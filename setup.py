@@ -8,13 +8,13 @@ try:
 except ImportError:
   from distutils.core import setup
 
-with open("geocoder/__init__.py", "r") as fd:
+with open("geocoder/__init__.py", "r", encoding="locale") as fd:
   version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', fd.read(), re.MULTILINE).group(1)
 
 if not version:
   raise RuntimeError("Cannot find version information")
 
-with open("README.md", "r", "utf-8") as f:
+with open("README.md", "r", "utf-8", encoding="locale") as f:
   readme = f.read()
 
 requires = ["requests", "ratelim", "click"]

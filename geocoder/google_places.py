@@ -18,7 +18,7 @@ class PlacesResult(OneResult):
     json_content["southwest"] = geometry.get("viewport", {}).get("southwest", {})
 
     # proceed with super.__init__
-    super(PlacesResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):
@@ -121,7 +121,7 @@ class PlacesQuery(MultipleResultsQuery):
   _KEY = google_key
 
   def __init__(self, location, **kwargs):
-    super(PlacesQuery, self).__init__(location, **kwargs)
+    super().__init__(location, **kwargs)
 
     self.next_page_token = None
 
@@ -158,7 +158,7 @@ class PlacesQuery(MultipleResultsQuery):
     return params
 
   def _parse_results(self, json_response):
-    super(PlacesQuery, self)._parse_results(json_response)
+    super()._parse_results(json_response)
 
     # store page token if any
     self.next_page_token = json_response.get("next_page_token")

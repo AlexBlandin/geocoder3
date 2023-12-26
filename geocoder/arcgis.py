@@ -12,7 +12,7 @@ class ArcgisResult(OneResult):
     self._feature = json_content.get("feature", {})
 
     # proceed with super.__init__
-    super(ArcgisResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def address(self):

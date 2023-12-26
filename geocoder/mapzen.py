@@ -14,7 +14,7 @@ class MapzenResult(OneResult):
     self._properties = json_content.get("properties", {})
 
     # proceed with super.__init__
-    super(MapzenResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):

@@ -16,7 +16,7 @@ class OpenCageResult(OneResult):
     self._bounds = json_content.get("bounds", {})
 
     # proceed with super.__init__
-    super(OpenCageResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):

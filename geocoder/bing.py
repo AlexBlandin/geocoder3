@@ -12,7 +12,7 @@ class BingResult(OneResult):
     self._address = json_content.get("address", {})
 
     # proceed with super.__init__
-    super(BingResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):

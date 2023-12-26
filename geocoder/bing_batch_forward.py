@@ -6,8 +6,14 @@ import io
 import csv
 
 csv_io = io.StringIO
-csv_encode = lambda input: input.encode("utf-8")
-csv_decode = lambda input: input.decode("utf-8")
+
+
+def csv_encode(input):
+  return input.encode("utf-8")
+
+
+def csv_decode(input):
+  return input.decode("utf-8")
 
 
 class BingBatchForwardResult(BingBatchResult):

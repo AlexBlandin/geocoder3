@@ -15,7 +15,7 @@ class MapboxResult(OneResult):
         attribute = item["id"].split(".")[0]
         json_content[attribute] = item["text"]
 
-    super(MapboxResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):

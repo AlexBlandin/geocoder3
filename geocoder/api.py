@@ -147,7 +147,7 @@ def get(location, **kwargs):
   """
   provider = kwargs.get("provider", "bing").lower().strip()
   method = kwargs.get("method", "geocode").lower().strip()
-  if isinstance(location, (list, dict)) and method == "geocode":
+  if isinstance(location, list | dict) and method == "geocode":
     raise ValueError("Location should be a string")
 
   if provider not in options:

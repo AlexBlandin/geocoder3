@@ -13,7 +13,7 @@ class KomootResult(OneResult):
     self._properties = json_content.get("properties", {})
 
     # proceed with super.__init__
-    super(KomootResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):
@@ -36,21 +36,21 @@ class KomootResult(OneResult):
   @property
   def address(self):
     # Ontario, Canada
-    address = ", ".join([self.state, self.country])
+    address = f"{self.state}, {self.country}"
 
     # 453 Booth street, Ottawa ON, Canada
     if self.housenumber:
-      middle = ", ".join([self.street, self.city])
-      address = " ".join([self.housenumber, middle, address])
+      middle = f"{self.street}, {self.city}"
+      address = f"{self.housenumber} {middle} {address}"
 
     # 453 Booth street, Ottawa ON, Canada
     elif self.street:
-      middle = ", ".join([self.street, self.city])
-      address = " ".join([middle, address])
+      middle = f"{self.street}, {self.city}"
+      address = f"{middle} {address}"
 
     # Ottawa ON, Canada
     elif self.city:
-      address = " ".join([self.city, address])
+      address = f"{self.city} {address}"
 
     return address
 

@@ -12,7 +12,7 @@ class TamuResult(OneResult):
     self.parsed_address = json_content.get("ParsedAddress", {})
     self.reference_feature = json_content.get("ReferenceFeature", {})
     self.census_value = json_content.get("CensusValues", [{}])[0].get("CensusValue1", {})
-    super(TamuResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):
@@ -46,7 +46,7 @@ class TamuResult(OneResult):
   def street(self):
     name = self.parsed_address.get("Name", "")
     suffix = self.parsed_address.get("Suffix", "")
-    return " ".join([name, suffix]).strip()
+    return f"{name} {suffix}".strip()
 
   @property
   def address(self):
@@ -165,7 +165,7 @@ class TamuQuery(MultipleResultsQuery):
     if exception_occured == "True" or status_code != "200" or exception:
       self.error = exception
 
-    if status_code == "401" or status_code == "470":
+    if status_code in {"401", "470"}:
       self.error = f"Tamu returned status_code {status_code}.  Is API key {self.key} valid?"
 
     return self.error

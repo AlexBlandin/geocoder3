@@ -10,7 +10,7 @@ from geocoder.keys import tgos_key
 
 class TgosResult(OneResult):
   def __init__(self, json_content, language):
-    super(TgosResult, self).__init__(json_content)
+    super().__init__(json_content)
     self.language = language
 
   @property
@@ -174,9 +174,9 @@ class TgosQuery(MultipleResultsQuery):
   def _before_initialize(self, location, **kwargs):
     # Custom language output
     language = kwargs.get("language", "taiwan").lower()
-    if language in ["english", "en", "eng"]:
+    if language in {"english", "en", "eng"}:
       self.language = "en"
-    elif language in ["chinese", "zh"]:
+    elif language in {"chinese", "zh"}:
       self.language = "zh-tw"
     else:
       self.language = "zh-tw"

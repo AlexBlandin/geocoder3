@@ -15,7 +15,7 @@ class GeocodeFarmResult(OneResult):
     self._location_details = json_content.get("LOCATION_DETAILS", {})
 
     # proceed with super.__init__
-    super(GeocodeFarmResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):
@@ -124,7 +124,7 @@ class GeocodeFarmQuery(MultipleResultsQuery):
   _KEY_MANDATORY = False
 
   def __init__(self, location, **kwargs):
-    super(GeocodeFarmQuery, self).__init__(location, **kwargs)
+    super().__init__(location, **kwargs)
 
     self.api_status = {}
     self.api_account = {}
@@ -149,7 +149,7 @@ class GeocodeFarmQuery(MultipleResultsQuery):
     return json_response["geocoding_results"]["RESULTS"]
 
   def _parse_results(self, json_response):
-    super(GeocodeFarmQuery, self)._parse_results(json_response)
+    super()._parse_results(json_response)
 
     # store status and account details
     self.api_status = json_response["geocoding_results"]["STATUS"]

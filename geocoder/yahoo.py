@@ -19,7 +19,7 @@ class YahooResult(OneResult):
     line1 = self.raw.get("line1")
     line2 = self.raw.get("line2")
     if line1:
-      return ", ".join([line1, line2])
+      return f"{line1}, {line2}"
     else:
       return line2
 
@@ -97,9 +97,8 @@ class YahooQuery(MultipleResultsQuery):
 
   def _catch_errors(self, json_response):
     status = json_response["statusDescription"]
-    if status:
-      if status != "OK":
-        self.error = status
+    if status and status != "OK":
+      self.error = status
 
     return self.error
 

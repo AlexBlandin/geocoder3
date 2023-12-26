@@ -13,7 +13,7 @@ class USCensusResult(OneResult):
     self._address_components = json_content.get("addressComponents", {})
 
     # proceed with super.__init__
-    super(USCensusResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):

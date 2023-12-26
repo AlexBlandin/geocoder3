@@ -11,7 +11,7 @@ class GeolyticaResult(OneResult):
     self._standard = json_content.get("standard", {})
 
     # proceed with super.__init__
-    super(GeolyticaResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):

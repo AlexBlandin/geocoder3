@@ -50,7 +50,7 @@ class Location:
           self.lat, self.lng = g.lat, g.lng
 
     # Checking for List of Tuple
-    elif isinstance(location, (list, tuple)):
+    elif isinstance(location, list | tuple):
       self._check_for_list(location)
 
     # Checking for Dictionary
@@ -136,7 +136,7 @@ class BBox:
   @classmethod
   def factory(cls, arg):
     # validate input first
-    if not isinstance(arg, (list, dict)):
+    if not isinstance(arg, list | dict):
       raise ValueError("BBox factory only accept a dict or a list as argument")
     # we have a dict... just check which fields are given
     if isinstance(arg, dict):

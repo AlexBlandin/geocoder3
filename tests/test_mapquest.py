@@ -40,7 +40,7 @@ def test_mapquest_reverse():
 def test_mapquest_batch():
   url = "http://www.mapquestapi.com/geocoding/v1/batch"
   data_file = "tests/results/mapquest_batch.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     mocker.get(url, text=input.read())
     g = geocoder.mapquest(locations, method="batch", timeout=10)
     assert g.ok

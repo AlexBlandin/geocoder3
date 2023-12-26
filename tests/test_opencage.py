@@ -72,7 +72,7 @@ def test_opencage_paid():
   # Paid API keys can be set to unlimited and have rate limit information ommitted from the response
   url = "http://api.opencagedata.com/geocode/v1/json?query=The+Happy+Goat%2C+Ottawa&limit=1&key=" + os.environ.get("OPENCAGE_API_KEY")
   data_file = "tests/results/opencagedata_paid.json"
-  with requests_mock.Mocker() as mocker, open(data_file) as input:
+  with requests_mock.Mocker() as mocker, open(data_file, encoding="locale") as input:
     mocker.get(url, text=input.read())
     result = geocoder.opencage(address)
     assert result.ok

@@ -10,7 +10,7 @@ from geocoder.keys import tomtom_key
 class TomtomResult(OneResult):
   def __init__(self, json_content):
     self._address = json_content["address"]
-    super(TomtomResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):

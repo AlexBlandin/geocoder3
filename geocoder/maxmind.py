@@ -12,7 +12,7 @@ class MaxmindResults(OneResult):
     self._traits = json_content.get("traits", {})
 
     # proceed with super.__init__
-    super(MaxmindResults, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):

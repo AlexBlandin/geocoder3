@@ -30,7 +30,7 @@ class HereReverse(HereQuery):
   _URL = "http://reverse.geocoder.cit.api.here.com/6.2/reversegeocode.json"
 
   def _build_params(self, location, provider_key, **kwargs):
-    params = super(HereReverse, self)._build_params(location, provider_key, **kwargs)
+    params = super()._build_params(location, provider_key, **kwargs)
     del params["searchtext"]
 
     location = str(Location(location))

@@ -17,7 +17,7 @@ class HereResult(OneResult):
     for item in json_content["Address"]["AdditionalData"]:
       json_content[item["key"]] = item["value"]
 
-    super(HereResult, self).__init__(json_content)
+    super().__init__(json_content)
 
   @property
   def lat(self):

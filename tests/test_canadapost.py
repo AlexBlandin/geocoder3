@@ -11,8 +11,8 @@ def test_canadapost():
   data_file_1 = "tests/results/canadapost_find_1.json"
   data_file_2 = "tests/results/canadapost_find_2.json"
   data_file_3 = "tests/results/canadapost_retrieve.json"
-  with requests_mock.Mocker() as mocker, open(data_file_1, encoding="locale") as input_1, open(data_file_2, encoding="locale") as input_2, open(
-    data_file_3, encoding="locale"
+  with requests_mock.Mocker() as mocker, open(data_file_1, encoding="utf8") as input_1, open(data_file_2, encoding="utf8") as input_2, open(
+    data_file_3, encoding="utf8"
   ) as input_3:
     mocker.get(url_1, text=input_1.read())
     mocker.get(url_2, text=input_2.read())

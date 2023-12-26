@@ -13,6 +13,7 @@ Table of releases
 - [Changelog](#changelog)
   - [Table of releases](#table-of-releases)
   - [\[Unreleased\]](#unreleased)
+  - [\[2.00.1\] - 2023-12-26](#2001---2023-12-26)
   - [\[2.00.0\] - 2022-01-05](#2000---2022-01-05)
   - [\[1.32.1\] - 2017-09-16](#1321---2017-09-16)
   - [\[1.32.0\] - 2017-09-11](#1320---2017-09-11)
@@ -29,9 +30,13 @@ Table of releases
 
 ## [Unreleased]
 
+## [2.00.1] - 2023-12-26
+
+This fork has updated to use Python 3.10+, so clearly continues to be solely for my own usage, please consult more active forks for actual support.
+
 ## [2.00.0] - 2022-01-05
 
-This fork drops support for Python 2, and focuses solely on Python 3. This also cleaning up the requirements, as we no longer have these dependencies (goodbye Python 2, your sunsetting took far too long). Future versions may include fixes for issues, but my own usage is so limited that it's unlikely, find more active forks if you require this.
+This fork drops support for Python 2, and focuses solely on Python 3. This also cleans up the requirements, as we no longer have these dependencies (goodbye Python 2, your sunsetting took far too long). Future versions may include fixes for issues, but my own usage is so limited that it's unlikely, find more active forks if you require this.
 
 * added opencage rate to show how many API queries remain for the day (issue #295)
 * added `country_code` result when geocoding with osm

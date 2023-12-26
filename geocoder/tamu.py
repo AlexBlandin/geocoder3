@@ -50,16 +50,14 @@ class TamuResult(OneResult):
 
   @property
   def address(self):
-    return " ".join(
-      [
-        self.parsed_address.get("Number", ""),
-        self.parsed_address.get("Name", ""),
-        self.parsed_address.get("Suffix", ""),
-        self.parsed_address.get("City", ""),
-        self.parsed_address.get("State", ""),
-        self.parsed_address.get("Zip", ""),
-      ]
-    )
+    return " ".join([
+      self.parsed_address.get("Number", ""),
+      self.parsed_address.get("Name", ""),
+      self.parsed_address.get("Suffix", ""),
+      self.parsed_address.get("City", ""),
+      self.parsed_address.get("State", ""),
+      self.parsed_address.get("Zip", ""),
+    ])
 
   @property
   def city(self):

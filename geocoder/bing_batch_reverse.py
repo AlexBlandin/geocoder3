@@ -65,18 +65,16 @@ class BingBatchReverse(BingBatch):
   def generate_batch(self, locations):
     out = csv_io()
     writer = csv.writer(out)
-    writer.writerow(
-      [
-        "Id",
-        "ReverseGeocodeRequest/Location/Latitude",
-        "ReverseGeocodeRequest/Location/Longitude",
-        "GeocodeResponse/Address/FormattedAddress",
-        "GeocodeResponse/Address/Locality",
-        "GeocodeResponse/Address/PostalCode",
-        "GeocodeResponse/Address/AdminDistrict",
-        "GeocodeResponse/Address/CountryRegion",
-      ]
-    )
+    writer.writerow([
+      "Id",
+      "ReverseGeocodeRequest/Location/Latitude",
+      "ReverseGeocodeRequest/Location/Longitude",
+      "GeocodeResponse/Address/FormattedAddress",
+      "GeocodeResponse/Address/Locality",
+      "GeocodeResponse/Address/PostalCode",
+      "GeocodeResponse/Address/AdminDistrict",
+      "GeocodeResponse/Address/CountryRegion",
+    ])
 
     for idx, location in enumerate(locations):
       writer.writerow([idx, location[0], location[1], None, None, None, None, None])

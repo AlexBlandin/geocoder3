@@ -34,13 +34,11 @@ class HereReverse(HereQuery):
     del params["searchtext"]
 
     location = str(Location(location))
-    params.update(
-      {
-        "prox": location,
-        "mode": "retrieveAddresses",
-        "gen": 8,
-      }
-    )
+    params.update({
+      "prox": location,
+      "mode": "retrieveAddresses",
+      "gen": 8,
+    })
     return params
 
 

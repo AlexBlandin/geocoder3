@@ -98,36 +98,34 @@ class GeonamesQuery(MultipleResultsQuery):
       base_kwargs.update({"east": bbox.east, "west": bbox.west, "north": bbox.north, "south": bbox.south})
 
     # look out for valid extra kwargs
-    supported_kwargs = set(
-      (
-        "name",
-        "name_equals",
-        "name_startsWith",
-        "startRow",
-        "country",
-        "countryBias",
-        "continentCode",
-        "adminCode1",
-        "adminCode2",
-        "adminCode3",
-        "cities",
-        "featureClass",
-        "featureCode",
-        "lang",
-        "type",
-        "style",
-        "isNameRequired",
-        "tag",
-        "operator",
-        "charset",
-        "east",
-        "west",
-        "north",
-        "south",
-        "orderby",
-        "inclBbox",
-      )
-    )
+    supported_kwargs = set((
+      "name",
+      "name_equals",
+      "name_startsWith",
+      "startRow",
+      "country",
+      "countryBias",
+      "continentCode",
+      "adminCode1",
+      "adminCode2",
+      "adminCode3",
+      "cities",
+      "featureClass",
+      "featureCode",
+      "lang",
+      "type",
+      "style",
+      "isNameRequired",
+      "tag",
+      "operator",
+      "charset",
+      "east",
+      "west",
+      "north",
+      "south",
+      "orderby",
+      "inclBbox",
+    ))
     found_kwargs = supported_kwargs & set(kwargs.keys())
     LOGGER.debug("Adding extra kwargs %s", found_kwargs)
 

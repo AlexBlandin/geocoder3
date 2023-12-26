@@ -9,10 +9,10 @@ except ImportError:
   from distutils.core import setup
 
 with open("geocoder/__init__.py", "r", encoding="utf8") as fd:
-  version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', fd.read(), re.MULTILINE).group(1)
+  version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', fd.read(), re.MULTILINE).group(1)  # type: ignore
 
 if not version:
-  raise RuntimeError("Cannot find version information")
+  raise RuntimeError("Cannot find version information")  # noqa: TRY003
 
 with open("README.md", "r", encoding="utf8") as f:
   readme = f.read()

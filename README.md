@@ -41,24 +41,26 @@ Table of content
 
 <!-- TOC -->
 
+- [Table of content](#table-of-content)
 - [Overview](#overview)
 - [A glimpse at the API](#a-glimpse-at-the-api)
-    - [Forward](#forward)
-    - [Multiple results](#multiple-results)
-    - [Reverse](#reverse)
-    - [House Addresses](#house-addresses)
-    - [IP Addresses](#ip-addresses)
-    - [Bounding Box](#bounding-box)
+  - [Forward](#forward)
+  - [Multiple queries ('batch' geocoding)](#multiple-queries-batch-geocoding)
+  - [Multiple results](#multiple-results)
+  - [Reverse](#reverse)
+  - [House Addresses](#house-addresses)
+  - [IP Addresses](#ip-addresses)
+  - [Bounding Box](#bounding-box)
 - [Command Line Interface](#command-line-interface)
 - [Providers](#providers)
 - [Installation](#installation)
-    - [PyPi Install](#pypi-install)
-    - [GitHub Install](#github-install)
-    - [Snap Install](#snap-install)
+  - [PyPi Install](#pypi-install)
+  - [GitHub Install](#github-install)
+  - [Snap Install](#snap-install)
 - [Feedback](#feedback)
 - [Contribution](#contribution)
-    - [Documenting](#documenting)
-    - [Coding](#coding)
+  - [Documenting](#documenting)
+  - [Coding](#coding)
 - [ChangeLog](#changelog)
 
 <!-- /TOC -->
@@ -249,9 +251,8 @@ Installing the latest version from Github:
 
 ```bash
 $ git clone https://github.com/DenisCarriere/geocoder
-...
 $ cd geocoder
-$ python setup.py install
+$ python -m pip install .
 ...
 ```
 

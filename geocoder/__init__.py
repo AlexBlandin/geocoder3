@@ -24,7 +24,7 @@ Consistant JSON responses from various providers.
 __title__ = "geocoder"
 __author__ = "Denis Carriere, Alex Blandin"
 __author_email__ = "carriere.denis@gmail.com"
-__version__ = "2.00.0"
+__version__ = "2.0.1"
 __license__ = "MIT"
 __copyright__ = "Copyright (c) 2013-2016 Denis Carriere, 2023- Alex Blandin"
 
